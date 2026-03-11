@@ -6,13 +6,23 @@ using System.Collections;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TMP_Text messageText;
+    [SerializeField] TMP_Text promptText;
+    [SerializeField] string prompt;
 
     private Coroutine _fadeCoroutine;
 
     [SerializeField] float _messageDuration = 3.0f;
     [SerializeField] float _fadeOutTime = 0.5f;
 
+    public void ShowPrompt()
+    {
+        promptText.text = prompt;
+    }
 
+    public void HidePrompt()
+    {
+        promptText.text = "";
+    }
 
     public void DisplayMessage(string message)
     {
